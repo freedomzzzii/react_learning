@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        var Comment = React.createClass({ getInitialState: function(){ return{editing: false}; }, edit: function(){ this.setState({editing: true}); }, remove: function(){ this.props.deleteFromBoard(this.props.index) }, save: function(){ var val = this.refs.newText.value;
+        this.props.updateCommentText(this.refs.newText.value, this.props.index); this.setState({editing: false}); }, renderNormal: function(){ return(
+        <div className="commentContainer">
+            <div className="commentText">{this.props.children}</div>
+            <button onClick={this.edit} className="btn btn-primary">Edit</button>
+            <button onClick={this.remove} className="btn btn-danger">Remove</button>
+        </div>
+        ); }, renderForm: function(){ return(
+        <div className="commentContainer">
+            <textarea ref="newText" defaultValue={this.props.children}></textarea>
+            <button onClick={this.save} className="btn btn-success">Save</button>
+        </div>
+        ); }, render: function(){ if(this.state.editing) return this.renderForm(); else return this.renderNormal(); } }); var Board = React.createClass({ getInitialState: function(){ return { comment: [] }; }, add: function(text){ var arr = this.state.comment;
+        arr.push(text); this.setState({comment: arr}); }, removeComment: function(i){ var arr = this.state.comment; arr.splice(i, 1); this.setState({comment: arr}); }, updateComment: function(newText, i){ var arr = this.state.comment; arr[i] = newText;
+        this.setState({comment: arr}); }, eachComment: function(text, i){ return (
+        <Comment key={i} index={i} updateCommentText={this.updateComment} deleteFromBoard={this.removeComment}>{text}</Comment>); }, render: function(){ return(
+        <div>
+            <button onClick={this.add.bind(null, "Default text")} className="btn btn-info">Add new</button>
+            <div>{ this.state.comment.map(this.eachComment) }</div>
+        </div>
+        ); } }); ReactDOM.render(
+
+        <Board/>, document.getElementById("container"));
+    </script>
+
+</body>
+
+</html>
