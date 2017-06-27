@@ -1,0 +1,102 @@
+/*.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+
+/* Create a Parallax Effect */
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+    background-attachment: fixed;
+    /*background-attachment: scroll;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* First image (Logo. Full height) */
+
+.bgimg-1 {
+    /*background-image: url('./img/parallax1.jpg');*/
+    background-image: url('./img/h1.jpg');
+    min-height: 100%;
+}
+
+#testHeader{
+    height: 100vh
+}
+
+
+/* Second image (Portfolio) */
+
+.bgimg-2 {
+    background-image: url("./img/parallax2.jpg");
+    min-height: 400px;
+}
+
+
+/* Third image (Contact) */
+
+.bgimg-3 {
+    background-image: url("./img/parallax3.jpg");
+    min-height: 400px;
+}
+
+.w3-wide {
+    letter-spacing: 10px;
+}
+
+.w3-hover-opacity {
+    cursor: pointer;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
