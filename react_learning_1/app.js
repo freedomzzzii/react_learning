@@ -41,6 +41,10 @@ app.get('/react_9', function(req, res) {
     res.render('react_9');
 });
 
+app.get('/test', function(req, res) {
+    res.render('test');
+});
+
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!')
 })
