@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#img1{
+  padding-top: 2%;
+  margin-bottom: 1%;
+}
+
+#testBtn{
+      width: 15%;
+      margin-left: 5%;
+      margin-right: 5%;
+}
+
+footer{
+  background-color: #222;
+  color: whitesmoke;
+}
+
+.imgFooter
+{
+  height: 10vh;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#bgBodyOne{
+  background-image: url("./images/t8.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  color: whitesmoke;
+}
+
+nav.navbar.navbar-inverse.navbar-static-top{
+  margin-bottom: 0;
+}
+
+#mainBodyOne{
+  height: 50vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#blockBodyOne{
+  display: inline-block;
+  background-color: darkgray;
+}
+
+#BodyTwo{
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
