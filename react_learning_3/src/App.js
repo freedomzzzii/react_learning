@@ -280,9 +280,26 @@ class Footer extends Component{
 }
 
 class App extends Component {
+  componentDidMount() {
+      window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+    }
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className="App" onScroll={this.handleScroll}>
         <NavbarMain/>
         <Header/>
         <AboutMe/>
