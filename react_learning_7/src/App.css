@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#root{
+  display: block;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.input_box{
+  margin-bottom: 2%;
+}
+
+#username{
+  margin-right: 2%;
+}
+
+.imgProfile{
+  width: 50%;
+}
+
+.imgFollower{
+  width: 20%;
+}
+
+.detailProfile{
+  text-align: left;
+}
+
+h4{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
