@@ -1,17 +1,14 @@
 #React_learning_1
-install express swig
+<p>install express swig</p>
 
 #React_learning_3
-Detail: Sample Profile.
-
-install create-react-app
+<p>Detail: Sample Profile.</p>
+<p>install create-react-app</p>
 
 #React_learning_6
-Detail: Test Wireframe.
-
-install create-react-app react-bootstrap
+<p>Detail: Test Wireframe.</p>
+<p>install create-react-app react-bootstrap</p>
 
 #React_learning_7
-Detail: Call API Github get user and show detail(Followers and Repository).
-
-install create-react-app react-bootstrap jquery
+<p>Detail: Call API Github get user and show detail(Followers and Repository).</p>
+<p>install create-react-app react-bootstrap jquery</p>
