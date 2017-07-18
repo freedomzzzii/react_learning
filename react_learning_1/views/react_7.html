@@ -20,24 +20,47 @@
     <div id="container"></div>
 
     <script type="text/babel">
-        var Item = React.createClass({ getInitialState: function(){ return{editing: false}; }, edit: function(){ this.setState({editing: true}); }, remove: function(){ alert("removing"); }, save: function(){ this.setState({editing: false}); }, renderNormal: function(){
-        return(
-        <div className="commentContainer">
-            <div className="commentText">{this.props.children}</div>
-            <button onClick={this.edit} className="btn btn-primary">Edit</button>
-            <button onClick={this.remove} className="btn btn-danger">Remove</button>
-        </div>
-        ); }, renderForm: function(){ return(
-        <div className="commentContainer">
-            <textarea defaultValue={this.props.children}></textarea>
-            <button onClick={this.save} className="btn btn-success">Save</button>
-        </div>
-        ); }, render: function(){ if(this.state.editing) return this.renderForm(); else return this.renderNormal(); } }); ReactDOM.render(
-        <div>
-            <Item>Hey, I'm Jessica</Item>
-            <Item>Hey, I'm Teayeon</Item>
-            <Item>Hey, I'm Tiffany</Item>
-        </div>, document.getElementById("container"));
+        var Item = React.createClass({ 
+            getInitialState: function(){ 
+                return{editing: false}; 
+            },
+            edit: function(){ 
+                this.setState({editing: true}); 
+            },
+            remove: function(){ 
+                alert("removing"); 
+            },
+            save: function(){
+                this.setState({editing: false}); 
+            }, 
+            renderNormal: function(){
+                return(
+                <div className="commentContainer">
+                    <div className="commentText">{this.props.children}</div>
+                    <button onClick={this.edit} className="btn btn-primary">Edit</button>
+                    <button onClick={this.remove} className="btn btn-danger">Remove</button>
+                </div>
+                ); 
+            }, 
+            renderForm: function(){ 
+                return(
+                    <div className="commentContainer">
+                        <textarea defaultValue={this.props.children}></textarea>
+                        <button onClick={this.save} className="btn btn-success">Save</button>
+                    </div>
+                ); 
+            }, 
+            render: function(){ 
+                if(this.state.editing) return this.renderForm(); 
+                else return this.renderNormal(); 
+            } 
+        }); 
+        ReactDOM.render(
+            <div>
+                <Item>Hey, I'm Jessica</Item>
+                <Item>Hey, I'm Teayeon</Item>
+                <Item>Hey, I'm Tiffany</Item>
+            </div>, document.getElementById("container"));
     </script>
 
 </body>
